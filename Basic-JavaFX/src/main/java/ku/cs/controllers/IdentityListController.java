@@ -1,0 +1,96 @@
+package ku.cs.controllers;
+
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import ku.cs.models.Identity;
+import ku.cs.models.IdentityList;
+import ku.cs.services.FXRouter;
+import ku.cs.services.IdentityHardCodeDataSource;
+
+import java.io.IOException;
+public class IdentityListController {
+
+    @FXML private ListView<Identity> IdentityListView;
+    @FXML private Label nameLabel;
+    @FXML private Label statusLabel;
+    @FXML private Label ansloveLabel;
+
+    @FXML private Label errorLabel;
+    @FXML private TextField giveTextField;
+
+    private IdentityList identityList;
+    private Identity selectPerson;
+
+    @FXML
+    public void initialize() {
+        errorLabel.setText("");
+        clearIdentityInfo();
+        IdentityHardCodeDataSource datasource = new IdentityHardCodeDataSource();
+        identityList = datasource.readData();
+        showList(identityList);
+        IdentityListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Identity>() {
+            @Override
+            public void changed(ObservableValue<? extends Identity> observableValue, Identity oldValue, Identity newValue) {
+                if (newValue == null) {
+                    clearIdentityInfo();
+                    selectPerson = null;
+                } else {
+                    showIdentityInfo(newValue);
+                    selectPerson = newValue;
+                }
+            }
+        });
+    }
+
+    private void clearIdentityInfo() {
+        nameLabel.setText("");
+        statusLabel.setText("");
+        ansloveLabel.setText("");
+    }
+
+    private void showList(IdentityList identityList) {
+        IdentityListView.getItems().clear();
+        IdentityListView.getItems().addAll(identityList.getIdentities());
+    }
+
+    private void showIdentityInfo(Identity person) {
+        nameLabel.setText(person.getMyFavPersonsName());
+        statusLabel.setText(person.getTheirStatus());
+        ansloveLabel.setText(person.getDoYouLoveThem());
+    }
+
+    @FXML
+    public void onBacktowork2ButtonClick() {
+        try {
+            FXRouter.goTo("Identity-profile");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    public void onGiveButtonClick() {
+        if (selectPerson != null) {
+            String errorMessage = "";
+            try {
+                IdentityList.giveloveTold(selectPerson.getMyFavPersonsName(), giveTextField.getText());
+                showIdentityInfo(selectPerson);
+            } catch (NumberFormatException e) {
+                errorMessage = "Please insert your answer";
+                errorLabel.setText(errorMessage);
+            } finally {
+                if (errorMessage.equals("")) {
+                    giveTextField.setText("");
+                }
+            }
+        } else {
+            giveTextField.setText("");
+            errorLabel.setText("");
+        }
+    }
+
+}
