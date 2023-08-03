@@ -1,7 +1,7 @@
 package ku.cs.services;
 import ku.cs.models.IdentityList;
 
-public class IdentityHardCodeDataSource {
+public class IdentityHardCodeDataSource implements Datasource<IdentityList> {
 
     public IdentityList readData() {
         IdentityList list = new IdentityList();
@@ -13,6 +13,11 @@ public class IdentityHardCodeDataSource {
         list.addIdentity("Cillian Murphy","Real Person");
         list.addIdentity("Mads Mikkelsen","Real Person");
         return list;
+    }
+
+    @Override
+    public void writeData(IdentityList data) {
+
     }
 
 }

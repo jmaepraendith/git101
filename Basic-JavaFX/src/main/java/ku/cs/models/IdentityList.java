@@ -21,6 +21,17 @@ public class IdentityList {
         }
     }
 
+    public void addNewIdentity(String name, String status, String love) {
+        name = name.trim();
+        status = status.trim();
+        if (!name.equals("") && !status.equals("")) {
+            Identity exist = findthatperson(name);
+            if (exist == null) {
+                identities.add(new Identity(name, status, love));
+            }
+        }
+    }
+
     public static Identity findthatperson(String Name){
         for(Identity identity : identities){
             if(identity.isName(Name)){

@@ -4,14 +4,39 @@ public class Identity {
 
     private String myfavpersonsname;
     private String theirstatus;
-    private double myfavnumber;
 
-    public Identity( String name, String status, double myfavnumber) {
+    private String  doyoulovethem;
+
+    private int yearthattheyreborn;
+
+    public Identity( String name, String status){
+        this.myfavpersonsname = name;
+        this.theirstatus = status;
+        doyoulovethem = "";
+
+    }
+
+    public Identity(String name, String status,String doyoulovethem) {
+        this.myfavpersonsname = name;
+        this.theirstatus = status;
+        this.doyoulovethem = doyoulovethem;
+    }
+    public void SoDoYouLoveThem(String ans){
+        if(!ans.equals("")){
+            doyoulovethem = ans;
+        }
+    }
+
+    public Identity( String name, String status, int yearthattheyreborn) {
 
         this.myfavpersonsname = name;
-        this.myfavnumber = myfavnumber;
+        this.yearthattheyreborn = yearthattheyreborn;
         this.theirstatus = status;
 
+    }
+
+    public boolean isName(String namw){
+        return myfavpersonsname.equals(namw);
     }
 
     public String getTheirStatus() {
@@ -22,17 +47,24 @@ public class Identity {
         return myfavpersonsname;
     }
 
-    public double getMyFavNumber() {
-        return myfavnumber;
+    public int getYearThatTheyreBorn() {
+        return yearthattheyreborn;
     }
 
-    public double calculateSquare() {
-        return myfavnumber * myfavnumber;
+    public String getDoYouLoveThem(){return doyoulovethem;}
+
+    public int CalAge() {
+        return 2023-yearthattheyreborn ;
     }
 
-    public double calculateCube() {
-        return myfavnumber * myfavnumber * myfavnumber;
+    @Override
+    public String toString() {
+        return "{" +
+                "Name: '" + myfavpersonsname + '\'' +
+                ", Status: '" + theirstatus + '\'' +
+                ", Love?: " + doyoulovethem +
+                '}';
     }
 
-
+//
 }

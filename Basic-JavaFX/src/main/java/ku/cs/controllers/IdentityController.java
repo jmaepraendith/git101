@@ -18,16 +18,16 @@ public class IdentityController {
 
     @FXML
     public void initialize() {
-        Identity identity = new Identity("Alexandra Mikhailov", "Fictional Character",4 );
+        Identity identity = new Identity("Alexandra Mikhailov", "Fictional Character",1945 );
         showIdentity(identity);
     }
 
     private void showIdentity(Identity identity) {
         myfavpersonsnameLabel.setText(identity.getMyFavPersonsName());
         theirstatusLabel.setText(identity.getTheirStatus());
-        String numberformat = String.format("%.2f",identity.getMyFavNumber());
+        String numberformat = String.format("%d",identity.getYearThatTheyreBorn());
         myfavnumberLabel.setText(numberformat);
-        String calnumber = String.format("%.2f",identity.calculateSquare());
+        String calnumber = String.format("%d",identity.CalAge());
         calculateSquareLabel.setText(calnumber);
     }
 

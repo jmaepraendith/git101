@@ -14,7 +14,7 @@ public class HelloController {
     protected void onHelloButtonClick() {
         //welcomeText.setText("Welcome to JavaFX Application!");
         try {
-            FXRouter.goTo("Identity-profile");
+            FXRouter.goTo("Identity-list");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

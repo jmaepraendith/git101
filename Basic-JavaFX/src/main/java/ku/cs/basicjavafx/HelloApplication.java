@@ -12,7 +12,8 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXRouter.bind(this, stage, "Hello World");
         configRoute();
-        FXRouter.goTo("Identity-profile");
+        //FXRouter.goTo("Identity-profile");
+        FXRouter.goTo("Identity-list");
     }
 
     public static void configRoute()
@@ -20,6 +21,7 @@ public class HelloApplication extends Application {
         String viewPath = "ku/cs/views/";
         FXRouter.when("hello", viewPath + "hello-view.fxml");
         FXRouter.when("Identity-profile", viewPath + "Identity.fxml");
+        FXRouter.when("Identity-list",viewPath+"Identity-list.fxml");
     }
 
     public static void main(String[] args) {
