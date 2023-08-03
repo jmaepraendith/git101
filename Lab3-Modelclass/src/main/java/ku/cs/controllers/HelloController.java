@@ -18,7 +18,7 @@ public class HelloController {
     @FXML
     public void initialize() {
         welcomeText.setText("Hello JavaFX");
-        Image image = new Image(getClass().getResource("/images/cryyy.png").toString());
+        Image image = new Image(getClass().getResource("/images/pic1.gif").toString());
 
         sampleImageView.setImage(image);
     }

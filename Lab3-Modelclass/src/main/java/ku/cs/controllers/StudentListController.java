@@ -52,6 +52,15 @@ public class StudentListController {
         });
     }
 
+    @FXML
+    public void onBacktostutableButtonClick() {
+        try {
+            FXRouter.goTo("students-table");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private void showList(StudentList studentList) {
         studentListView.getItems().clear();
         studentListView.getItems().addAll(studentList.getStudents());
@@ -106,4 +115,6 @@ public class StudentListController {
             errorLabel.setText("");
         }
     }
+
+
 }
