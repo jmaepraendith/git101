@@ -22,6 +22,7 @@ public class HelloApplication extends Application {
         FXRouter.when("Identity-profile", viewPath + "Identity.fxml");
         FXRouter.when("Identity-list",viewPath+"Identity-list.fxml");
         FXRouter.when("Identity-table", viewPath + "Identity-table.fxml");
+        FXRouter.when("Identity-love", viewPath + "Identity-love.fxml");
     }
 
     public static void main(String[] args) {

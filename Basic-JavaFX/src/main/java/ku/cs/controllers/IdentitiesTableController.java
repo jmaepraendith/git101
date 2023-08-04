@@ -1,5 +1,7 @@
 package ku.cs.controllers;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -24,6 +26,20 @@ public class IdentitiesTableController {
         datasource = new IdentityListFileDatasource("data", "IdentityList.csv");
         identityList = datasource.readData();
         showTable(identityList);
+
+        identityTableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Identity>() {
+            @Override
+            public void changed(ObservableValue observable, Identity oldValue, Identity newValue) {
+                if (newValue != null) {
+                    try {
+                        // FXRouter.goTo สามารถส่งข้อมูลไปยังหน้าที่ต้องการได้ โดยกำหนดเป็น parameter ที่สอง
+                        FXRouter.goTo("Identity-love", newValue.getMyFavPersonsName());
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        });
 
     }
 
