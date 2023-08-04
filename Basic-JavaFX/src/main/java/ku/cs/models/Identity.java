@@ -2,56 +2,56 @@ package ku.cs.models;
 
 public class Identity {
 
-    private String myfavpersonsname;
-    private String theirstatus;
+    private String MyFavPersonsName;
+    private String TheirStatus;
 
-    private String  doyoulovethem;
+    private String  DoYouLoveThem;
 
     private int yearthattheyreborn;
 
     public Identity( String name, String status){
-        this.myfavpersonsname = name;
-        this.theirstatus = status;
-        doyoulovethem = "";
+        this.MyFavPersonsName = name;
+        this.TheirStatus = status;
+        DoYouLoveThem = "";
 
     }
 
     public Identity(String name, String status,String doyoulovethem) {
-        this.myfavpersonsname = name;
-        this.theirstatus = status;
-        this.doyoulovethem = doyoulovethem;
+        this.MyFavPersonsName = name;
+        this.TheirStatus = status;
+        this.DoYouLoveThem = doyoulovethem;
     }
     public void SoDoYouLoveThem(String ans){
         if(!ans.equals("")){
-            doyoulovethem = ans;
+            DoYouLoveThem = ans;
         }
     }
 
     public Identity( String name, String status, int yearthattheyreborn) {
 
-        this.myfavpersonsname = name;
+        this.MyFavPersonsName = name;
         this.yearthattheyreborn = yearthattheyreborn;
-        this.theirstatus = status;
+        this.TheirStatus = status;
 
     }
 
     public boolean isName(String namw){
-        return myfavpersonsname.equals(namw);
+        return MyFavPersonsName.equals(namw);
     }
 
     public String getTheirStatus() {
-        return theirstatus;
+        return TheirStatus;
     }
 
     public String getMyFavPersonsName() {
-        return myfavpersonsname;
+        return MyFavPersonsName;
     }
 
     public int getYearThatTheyreBorn() {
         return yearthattheyreborn;
     }
 
-    public String getDoYouLoveThem(){return doyoulovethem;}
+    public String getDoYouLoveThem(){return DoYouLoveThem;}
 
     public int CalAge() {
         return 2023-yearthattheyreborn ;
@@ -60,11 +60,9 @@ public class Identity {
     @Override
     public String toString() {
         return "{" +
-                "Name: '" + myfavpersonsname + '\'' +
-                ", Status: '" + theirstatus + '\'' +
-                ", Love?: " + doyoulovethem +
+                "Name: '" + MyFavPersonsName + '\'' +
+                ", Status: '" + TheirStatus + '\'' +
+                ", Love?: " + DoYouLoveThem +
                 '}';
     }
-
-//
 }

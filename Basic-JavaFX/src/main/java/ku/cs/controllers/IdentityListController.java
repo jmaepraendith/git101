@@ -37,7 +37,7 @@ public class IdentityListController {
         //IdentityHardCodeDataSource datasource = new IdentityHardCodeDataSource();
         //Datasource<IdentityList> datasource = new IdentityHardCodeDataSource();
         //Datasource<IdentityList> datasource = new IdentityListFileDatasource("data", "Identitylist.csv");
-        datasource = new IdentityListFileDatasource("data", "IdentityList.cvs");
+        datasource = new IdentityListFileDatasource("data", "IdentityList.csv");
 
         identityList = datasource.readData();
         showList(identityList);
