@@ -97,9 +97,9 @@ public class IdentityListFileDatasource implements Datasource<IdentityList> {
         BufferedWriter buffer = new BufferedWriter(outputStreamWriter);
 
         try {
-            // สร้าง csv ของ Student และเขียนลงในไฟล์ทีละบรรทัด
-            for (Identity student : data.getIdentities()) {
-                String line = student.getMyFavPersonsName() + "," + student.getTheirStatus() + "," + student.getDoYouLoveThem();
+
+            for (Identity people : data.getIdentities()) {
+                String line = people.getMyFavPersonsName() + "," + people.getTheirStatus() + "," + people.getDoYouLoveThem();
                 buffer.append(line);
                 buffer.append("\n");
             }
