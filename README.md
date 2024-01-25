@@ -1,20 +1,15 @@
-# CS211-661-Project
-Project ภาคต้น 2566
-
 # conquerHub application
 วิธีการติดตั้งและรันโปรแกรม
 
->Open git Bash and use this command: git clone https://github.com/CS211-661/cs211-661-project-conqueror.git
+>Open git Bash and use this command: git clone https://github.com/jmaepraendith/git101.git
 >
 >เมื่อโคนมาแล้ว
 
->1.เข้าไปในโฟลเดอร์ "PDF_Image_and_exe_program" ในโฟลเดอร์นี้จะมีโฟลเดอร์ที่ชื่อ "Jar file and Database"
+>1.ดาวน์โหลดโฟลเดอร์ที่ชื่อ "Jar_file_and_Database" ลงมาที่เครื่องของคุณ
 
->2.ดาวน์โหลดโฟลเดอร์ที่ชื่อ "Jar_file_and_Database" ลงมาที่เครื่องของคุณ
+>2.ในโฟลเดอร์ "Jar_file_and_Database" จะมีไฟล์ที่ชื่อ "cs211-661-project-conqueror-1.0-shaded.jar"
 
->3.ในโฟลเดอร์ "Jar_file_and_Database" จะมีไฟล์ที่ชื่อ "cs211-661-project-conqueror-1.0-shaded.jar"
-
->4.ไม่ว่าคุณใช้ Windows หรือ Mac OS คุณสามารถ Double click ที่ไฟล์ที่ชื่อ "cs211-661-project-conqueror-1.0-shaded.jar" เพื่อรันโปรแกรมได้เลย
+>3.ไม่ว่าคุณใช้ Windows หรือ Mac OS คุณสามารถ Double click ที่ไฟล์ที่ชื่อ "cs211-661-project-conqueror-1.0-shaded.jar" เพื่อรันโปรแกรมได้เลย
 
 
 # หากคุณไม่สามารถ Double click เพื่อรันโปรแกรมได้
