@@ -15,5 +15,5 @@ const server = http.createServer((req,res)=>{
         `)
 })
 
-server.listen(32000)
-console.log('server is running')
+server.listen(3200)
+console.log('server is running on port 3200')

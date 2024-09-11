@@ -50,3 +50,11 @@ const _ = require('lodash')
 const item = [1, [2,[3,[4]]]]
 const newItem = _.flattenDeep(item)
 console.log(newItem)
+console.log('hello world')
+
+// for  someone who download from git when you clone or pull maybe u have to use command "npm install" to be able to run
+
+// we use "devDependencies" while we creating an app so we not jam it with Dependencies because Dependencies are the depend that the app use not depend that create the app
+
+// we try to install nodemon globally so we can use nodemon in all our packet so we can run like 'nodemon app.js'
+
